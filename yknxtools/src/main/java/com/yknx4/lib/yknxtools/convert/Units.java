@@ -11,7 +11,7 @@ import java.util.Map;
  * Created by yknx4 on 3/16/16.
  */
 public class Units {
-    private static Map<Integer, Float> pxForDp = new HashMap<>();
+    private static final Map<Integer, Float> pxForDp = new HashMap<>();
     public static float getPixelsForDp(Context context, int dp){
         if(pxForDp.containsKey(dp))
             return pxForDp.get(dp);
