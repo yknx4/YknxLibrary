@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
  */
 public class RawResource {
     // reads resources regardless of their size
-    public byte[] getResource(int id, Context context) throws IOException {
+    public static byte[] getResource(int id, Context context) throws IOException {
         Resources resources = context.getResources();
         InputStream is = resources.openRawResource(id);
 
@@ -38,12 +38,12 @@ public class RawResource {
     }
 
     // reads a string resource
-    public String getStringResource(Context context, int id, Charset encoding) throws IOException {
+    public static String getStringResource(Context context, int id, Charset encoding) throws IOException {
         return new String(getResource(id, context), encoding);
     }
 
     // reads an UTF-8 string resource
-    public String getStringResource(Context context, int id) throws IOException {
+    public static String getStringResource(Context context, int id) throws IOException {
         return getStringResource(context, id, Charset.forName("UTF-8"));
     }
 }
